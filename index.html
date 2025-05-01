@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Page</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="navbar-left">
+        <h2>sneakers</h2>
+        <nav>
+          <a href="#">Collections</a>
+          <a href="#">Men</a>
+          <a href="#">Women</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </nav>
+      </div>
+      <div class="navbar-right">
+        <div class="cart-icon" onclick="toggleCart()">
+          <img src="images/icon-cart.svg" alt="Cart" />
+          <span class="cart-count" id="cartCount">0</span>
+          <div class="cart" id="cart">
+            <button class="close-cart" onclick="toggleCart()">
+              <img src="images/icon-close.svg" alt="Close Cart" />
+            </button>
+            <h3>Cart</h3>
+            <div id="cartItems" class="cart-items">
+              <p>Your Cart is Empty</p>
+            </div>
+            <button
+              disabled="true"
+              onclick="checkout()"
+              class="cart-checkout-btn"
+            >
+              Checkout
+            </button>
+          </div>
+        </div>
+        <div class="avatar">
+          <img src="images/image-avatar.png" alt="Avatar" />
+        </div>
+      </div>
+    </div>
+
+    <h1 class="product-name">Fall Limited Edition Sneakers</h1>
+    <div class="product">
+      <div>
+        <img
+          id="mainImage"
+          src="images/image-product-1.jpg"
+          width="300"
+          alt="Sneaker"
+        />
+        <div class="thumbnails" id="thumbnails"></div>
+      </div>
+      <div>
+        <p>
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they'll withstand everything
+          the weather can offer.
+        </p>
+        <h2>
+          $125.00
+          <span
+            style="text-decoration: line-through; color: gray; font-size: 16px"
+            >$250.00</span
+          >
+          <span
+            style="
+              color: hsl(26, 100%, 55%);
+              background: hsl(25, 100%, 94%);
+              padding: 2px 6px;
+              border-radius: 4px;
+              font-size: 14px;
+            "
+            >50%</span
+          >
+        </h2>
+        <div class="quantity-control">
+          <button
+            style="display: flex; align-items: center"
+            onclick="updateQuantity(-1)"
+          >
+            <img src="images/icon-minus.svg" alt="Minus" />
+          </button>
+          <span id="quantity">1</span>
+          <button
+            style="display: flex; align-items: center"
+            onclick="updateQuantity(1)"
+          >
+            <img src="images/icon-plus.svg" alt="Plus" />
+          </button>
+          <button onclick="addToCart()" class="add-to-cart-btn">
+            <img
+              src="images/icon-cart.svg"
+              alt="Add"
+              style="margin-right: 8px"
+            />Add to cart
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
